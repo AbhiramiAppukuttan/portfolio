@@ -12,13 +12,12 @@ export default function Experience() {
           viewport={{ once: true }} transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="font-mono text-emerald-400 text-sm tracking-widest mb-3">work experience</p>
+          <p className="font-mono text-red-500 text-sm tracking-widest mb-3">work experience</p>
           <h2 className="text-4xl md:text-5xl font-black text-white">Where I've Worked</h2>
         </motion.div>
 
         <div className="relative">
-          {/* timeline line */}
-          <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-emerald-400/60 via-violet-400/40 to-transparent" />
+          <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-red-500/70 to-transparent" />
 
           <div className="space-y-10">
             {experience.map((job, i) => (
@@ -30,28 +29,27 @@ export default function Experience() {
                 transition={{ duration: 0.6, delay: i * 0.15 }}
                 className="pl-16 relative"
               >
-                {/* dot */}
                 <div className={`absolute left-[18px] top-6 w-4 h-4 rounded-full border-2 -translate-y-1/2 ${
                   job.current
-                    ? 'border-emerald-400 bg-emerald-400/20 shadow-[0_0_12px_rgba(52,211,153,0.5)]'
-                    : 'border-slate-600 bg-[#0a0a0f]'
+                    ? 'border-red-500 bg-red-500/10 shadow-[0_0_10px_rgba(239,68,68,0.25)]'
+                    : 'border-zinc-700 bg-[#050508]'
                 }`} />
 
-                <div className="glass rounded-2xl p-6 hover:border-emerald-400/25 hover:translate-x-1 transition-all duration-300">
+                <div className="glass rounded-2xl p-6 hover:border-red-500/60 transition-all duration-300">
                   <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
                     <div>
                       <h3 className="text-white font-bold text-lg leading-tight">{job.role}</h3>
-                      <p className="flex items-center gap-1.5 text-emerald-400 font-semibold text-sm mt-1">
+                      <p className="flex items-center gap-1.5 text-zinc-400 font-medium text-sm mt-1">
                         <MapPin size={13} />
                         {job.company}
                       </p>
                     </div>
                     <div className="flex flex-col items-end gap-2 shrink-0">
-                      <span className="font-mono text-xs text-slate-500 bg-white/[0.05] border border-white/[0.07] px-3 py-1.5 rounded-full">
+                      <span className="font-mono text-xs text-zinc-500 bg-white/[0.04] border border-white/[0.06] px-3 py-1.5 rounded-full">
                         {job.period}
                       </span>
                       {job.current && (
-                        <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-400/10 border border-emerald-400/25 px-2.5 py-1 rounded-full">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-300 bg-white/[0.05] border border-red-500/30 px-2.5 py-1 rounded-full">
                           Current
                         </span>
                       )}
@@ -60,8 +58,8 @@ export default function Experience() {
 
                   <ul className="space-y-2 mb-5">
                     {job.points.map(pt => (
-                      <li key={pt} className="flex gap-3 text-sm text-slate-400 leading-relaxed">
-                        <span className="text-emerald-400 mt-0.5 shrink-0">▸</span>
+                      <li key={pt} className="flex gap-3 text-sm text-zinc-400 leading-relaxed">
+                        <span className="text-zinc-600 mt-0.5 shrink-0">▸</span>
                         <span>{pt}</span>
                       </li>
                     ))}
@@ -70,7 +68,7 @@ export default function Experience() {
                   <div className="flex flex-wrap gap-2">
                     {job.tags.map(tag => (
                       <span key={tag}
-                        className="text-xs font-mono text-emerald-400/80 bg-emerald-400/[0.06] border border-emerald-400/15 px-2.5 py-1 rounded-md"
+                        className="text-xs font-mono text-zinc-400 bg-white/[0.04] border border-white/[0.07] px-2.5 py-1 rounded-md"
                       >
                         {tag}
                       </span>

@@ -5,7 +5,7 @@ export const personal = {
   phone:    '+91 9778246540',
   location: 'Ernakulam, Kerala',
   linkedin: 'https://linkedin.com/in/abhirami-appukuttan',
-  github:   'https://github.com/abhirami-appukuttan',
+  github:   'https://github.com/AbhiramiAppukuttan',
 }
 
 export const typedPhrases = [
@@ -103,7 +103,7 @@ export const projects = [
     ],
     tech:     ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS', 'JWT'],
     live:     'https://fin-frontend-seven.vercel.app/',
-    github:   'https://github.com/abhirami-appukuttan',
+    github:   'https://github.com/AbhiramiAppukuttan/FinTrack',
     featured: true,
     impact:   '80% less manual effort',
   },
@@ -119,7 +119,7 @@ export const projects = [
     ],
     tech:     ['Laravel', 'PHP', 'MySQL', 'HTML', 'CSS'],
     live:     null,
-    github:   'https://github.com/abhirami-appukuttan',
+    github:   'https://github.com/AbhiramiAppukuttan',
     featured: false,
     impact:   '70% faster processing',
   },

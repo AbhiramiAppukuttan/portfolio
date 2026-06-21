@@ -37,10 +37,7 @@ export default function Hero() {
       setPhraseIdx(i => (i + 1) % typedPhrases.length)
       return
     }
-    const t = setTimeout(
-      () => setCharIdx(c => c + (deleting ? -1 : 1)),
-      deleting ? 55 : 85,
-    )
+    const t = setTimeout(() => setCharIdx(c => c + (deleting ? -1 : 1)), deleting ? 55 : 85)
     return () => clearTimeout(t)
   }, [charIdx, deleting, phraseIdx])
 
@@ -49,12 +46,11 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto px-6 w-full py-16 lg:py-0">
         <div className="grid lg:grid-cols-2 gap-14 items-center">
 
-          {/* ── Left: Text Content ── */}
           <div>
             <motion.p
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.15 }}
-              className="font-mono text-emerald-400 text-sm tracking-widest mb-3"
+              className="font-mono text-red-500 text-sm tracking-widest mb-3"
             >
               Hi there, I'm
             </motion.p>
@@ -72,44 +68,45 @@ export default function Hero() {
             <motion.div
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.35 }}
-              className="flex items-center gap-1 text-lg md:text-xl text-slate-400 font-medium mb-6 min-h-[32px]"
+              className="flex items-center gap-1 text-lg md:text-xl text-zinc-400 font-medium mb-6 min-h-[32px]"
             >
               <span>I build&nbsp;</span>
-              <span className="text-emerald-400 font-bold">{displayText}</span>
-              <span className="inline-block w-[2px] h-5 bg-emerald-400 animate-blink ml-0.5" />
+              <span className="text-white font-bold">{displayText}</span>
+              <span className="inline-block w-[2px] h-5 bg-white animate-blink ml-0.5" />
             </motion.div>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.45 }}
-              className="text-slate-400 leading-relaxed max-w-[500px] mb-9"
+              className="text-zinc-400 leading-relaxed max-w-[500px] mb-9"
             >
               Full Stack MERN Developer who cares about what happens after the code is pushed.
               Clean APIs, fast UIs, and databases that don't buckle when real users show up.
               Based in Kerala —{' '}
-              <span className="text-emerald-400 font-semibold">building for production, not just demos.</span>
+              <span className="text-zinc-200 font-semibold">building for production, not just demos.</span>
             </motion.p>
 
+            {/* Buttons — red border outline, no fill */}
             <motion.div
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.55 }}
               className="flex flex-wrap gap-4 mb-10"
             >
               <a href="#projects"
-                className="flex items-center gap-2 px-7 py-3 bg-emerald-400 text-[#0a0a0f] font-bold rounded-xl
-                           hover:bg-emerald-300 transition-all duration-200 hover:-translate-y-1
-                           shadow-lg shadow-emerald-400/25"
+                className="flex items-center gap-2 px-7 py-3 border border-red-500 text-zinc-200 font-bold rounded-xl
+                           hover:border-red-400 transition-all duration-200 hover:-translate-y-1"
               >
                 <ExternalLink size={16} /> View My Work
               </a>
               <a href="#contact"
-                className="px-7 py-3 border border-emerald-400/40 text-emerald-400 font-semibold rounded-xl
-                           hover:bg-emerald-400/10 transition-all duration-200 hover:-translate-y-1"
+                className="px-7 py-3 border border-white/[0.1] text-zinc-400 font-semibold rounded-xl
+                           hover:border-white/20 hover:text-zinc-200 transition-all duration-200 hover:-translate-y-1"
               >
                 Get In Touch
               </a>
             </motion.div>
 
+            {/* Socials — border outline only on hover */}
             <motion.div
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.65 }}
@@ -122,8 +119,8 @@ export default function Hero() {
                   target={s.external ? '_blank' : undefined}
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="w-10 h-10 flex items-center justify-center rounded-xl border border-white/10
-                             text-slate-400 hover:text-emerald-400 hover:border-emerald-400/40
+                  className="w-10 h-10 flex items-center justify-center rounded-xl border border-white/[0.08]
+                             text-zinc-500 hover:text-zinc-200 hover:border-red-500/40
                              hover:-translate-y-1 transition-all duration-200"
                 >
                   {s.icon}
@@ -132,26 +129,20 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* ── Right: Profile Photo ── */}
+          {/* Profile Photo — red ring */}
           <motion.div
             initial={{ opacity: 0, scale: 0.88 }} animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3, duration: 0.7, ease: 'easeOut' }}
             className="flex justify-center lg:justify-end"
           >
             <div className="relative">
-              {/* ambient glow */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-emerald-400/25 to-violet-500/25 blur-3xl scale-125" />
-
-              {/* photo ring */}
+              <div className="absolute inset-0 rounded-full bg-red-500/[0.12] blur-3xl scale-125" />
               <div className="relative w-[300px] h-[300px] md:w-[360px] md:h-[360px]">
-                {/* spinning gradient ring */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-400 via-violet-500 to-emerald-400 animate-spin-slow"
-                  style={{ padding: '3px' }}>
-                  <div className="w-full h-full rounded-full bg-[#0a0a0f]" />
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-red-500 via-zinc-800 to-red-500 animate-spin-slow"
+                  style={{ padding: '2px' }}>
+                  <div className="w-full h-full rounded-full bg-[#050508]" />
                 </div>
-
-                {/* photo */}
-                <div className="absolute inset-[3px] rounded-full overflow-hidden">
+                <div className="absolute inset-[2px] rounded-full overflow-hidden">
                   {!imgError ? (
                     <img
                       src="/profile.jpg"
@@ -160,13 +151,11 @@ export default function Hero() {
                       onError={() => setImgError(true)}
                     />
                   ) : (
-                    <div className="w-full h-full bg-gradient-to-br from-emerald-900/60 to-violet-900/60 flex items-center justify-center">
+                    <div className="w-full h-full bg-zinc-900 flex items-center justify-center">
                       <span className="text-7xl font-black gradient-text">AA</span>
                     </div>
                   )}
                 </div>
-
-                {/* floating tech badges */}
                 {badges.map((b, i) => (
                   <motion.div
                     key={b.label}
@@ -184,11 +173,10 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* scroll hint */}
       <motion.a
         href="#about"
         initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.4 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-500 hover:text-emerald-400 transition-colors group"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-zinc-600 hover:text-zinc-400 transition-colors"
       >
         <span className="text-[10px] font-semibold tracking-[0.2em] uppercase">Scroll</span>
         <motion.div animate={{ y: [0, 5, 0] }} transition={{ repeat: Infinity, duration: 1.6 }}>
